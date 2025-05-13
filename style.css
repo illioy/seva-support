@@ -40,7 +40,6 @@
   /* ==============================
      BODY : GRADIENT ANIMÉ
   ============================== */
-  /* Animation d'un défilement de gradient en fond */
   @keyframes shiftGradient {
     0% {
       background-position: 0% 50%;
@@ -342,97 +341,6 @@
     100% {
       transform: translateY(0) rotate(0deg);
     }
-  }
-  
-  .menuSidebar {
-    position: fixed;
-    left: 20px;
-    top: 25px;
-    z-index: 2;
-    width: 2rem;
-    height: 1.4rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    animation: floatBurger 2s infinite ease-in-out; /* Flottement */
-    transition: transform 0.3s ease, filter 0.3s ease;
-  }
-  
-  /* 3 lignes horizontales */
-  .menuSidebar .line {
-    width: 100%;
-    height: 4px;
-    background-color: var(--text-color);
-    transition: transform 0.3s ease, opacity 0.3s ease;
-  }
-  
-  /* Survol du burger */
-  .menuSidebar:hover {
-    filter: brightness(1.2);
-    transform: scale(1.1);
-  }
-  
-  /* Transition vers "X" lors de l'ouverture (classe "open") */
-  .menuSidebar.open .line1 {
-    transform: translateY(10px) rotate(45deg);
-  }
-  
-  .menuSidebar.open .line2 {
-    opacity: 0;
-  }
-  
-  .menuSidebar.open .line3 {
-    transform: translateY(-10px) rotate(-45deg);
-  }
-  
-  /* ==============================
-     SIDEBAR (MENU LATÉRAL)
-  ============================== */
-  /* Animation "shake" sur l'ouverture */
-  @keyframes sidebarShake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    50% { transform: translateX(5px); }
-    75% { transform: translateX(-5px); }
-    100% { transform: translateX(0); }
-  }
-  
-  .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    padding: 100px 0;
-    text-align: end;
-    gap: 10px;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out;
-    z-index: 1;
-  }
-  
-  .sidebar.open {
-    transform: translateX(0);
-    animation: sidebarShake 0.5s ease;
-  }
-  
-  .sidebar button {
-    width: 70%;
-    padding: 5px;
-    background: var(--dark-blue);
-    color: var(--text-color);
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-    border-radius: 5px;
-    transition: background 0.3s;
-  }
-  
-  .sidebar button:hover {
-    background: var(--dark-blue-hover);
   }
   
   /* ==============================
