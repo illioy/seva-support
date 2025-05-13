@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
+    <title>Seva Support</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="menuSidebar" id="menuToggle">
+            <div class="line line1"></div>
+            <div class="line line2"></div>
+            <div class="line line3"></div>
+        </div>
+        <h1>Seva Support</h1>
+    </header>
+
+    <div class="language-dropdown">
+        <button id="lang-toggle" aria-label="Change language">🇬🇧</button>
+        <div id="lang-options" class="hidden">
+            <button data-lang-select="en">🇬🇧</button>
+            <button data-lang-select="fr">&#x1f1eb;&#x1f1f7;</button>
+        </div>
+    </div>
+
+
+    <div class="sidebar" id="sidebar">
+        <button id="openLogin">Login</button>
+        <button id="openCompany">I'm a company</button>
+    </div>
+
+    <div class="cool">
+        <div class="needCall">
+            <p data-lang="en">Need call center workers?</p>
+            <p data-lang="fr">Besoin d'agents pour votre centre d'appel ?</p>
+            <p data-lang="en">Don’t hesitate. Contact us now!</p>
+            <p data-lang="fr">N'hésitez pas. Contactez-nous dès maintenant !</p>
+        </div>
+
+        <div class="infos">
+            <p data-lang="en">Seva Support is a call center working with all types of companies across any industry, including video games, fashion, IT, delivery services, and more.</p>
+            <p data-lang="fr">Seva Support est un centre d'appel qui travaille avec tous types d'entreprises, dans divers secteurs : jeux vidéo, mode, informatique, services de livraison, et bien d'autres.</p>
+        </div>
+    </div>
+
+    <section class="b2bServices">
+        <h2 data-lang="en">💼 Business Services We Offer</h2>
+        <h2 data-lang="fr">💼 Services proposés aux entreprises</h2>
+        <p data-lang="en">At Seva Support, we help companies manage customer relations — even if you're a small business or just starting out. Here’s what we can do for you:</p>
+        <p data-lang="fr">Chez Seva Support, nous aidons les entreprises à gérer leur relation client — même si vous êtes une petite structure ou que vous débutez. Voici ce que nous proposons :</p>
+
+        <div class="servicesList">
+            <ul>
+                <li data-lang="en">📞 <strong>Inbound call handling</strong>: we answer your customer calls professionally.</li>
+                <li data-lang="fr">📞 <strong>Gestion des appels entrants</strong> : nous répondons à vos clients de manière professionnelle.</li>
+
+                <li data-lang="en">💬 <strong>Chat and email support</strong>: fast and friendly replies to your clients.</li>
+                <li data-lang="fr">💬 <strong>Support par chat et email</strong> : des réponses rapides et amicales à vos clients.</li>
+
+                <li data-lang="en">📱 <strong>Social media management</strong>: replies to messages and comments.</li>
+                <li data-lang="fr">📱 <strong>Gestion des réseaux sociaux</strong> : réponses aux messages privés et commentaires.</li>
+
+                <li data-lang="en">📣 <strong>Client follow-up and cold calling</strong>: soft sales and follow-ups by phone.</li>
+                <li data-lang="fr">📣 <strong>Relances clients et prospection à froid</strong> : appels de suivi et ventes douces.</li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="forFreeBanner">
+        <div class="text">
+            <h2 data-lang="en">Free</h2>
+            <h2 data-lang="fr">Gratuit</h2>
+            <span data-lang="en">This sounds too good to be true, but it is.</span>
+            <span data-lang="fr">Cela semble trop beau pour être vrai, mais c'est réel.</span>
+            <p data-lang="en">Since we are new, we work for free for a limited time!</p>
+            <p data-lang="fr">Comme nous débutons, nous travaillons gratuitement pendant une période limitée !</p>
+        </div>
+    </div>
+
+    <form action="https://formsubmit.co/kkprout.money@protonmail.com" method="POST">
+  <label for="name">Name:</label>
+  <input type="text" name="name" required>
+
+  <label for="email">Email:</label>
+  <input type="email" name="email" required>
+
+  <label for="message">Message:</label>
+  <textarea name="message" required></textarea>
+
+  <button type="submit">Send</button>
+</form>
+
+
+    <footer>
+        <div class="social_networks">
+            <p data-lang="en">Contact us for more information</p>
+            <p data-lang="fr">Contactez-nous pour plus d'informations</p>
+
+            <div class="whatsapp">
+                <img src="../assets/whatsapp.png" alt="WhatsApp">
+                <strong>06 61 30 33 81</strong>
+            </div>
+
+            <div class="discord">
+                <img src="../assets/discord.png" alt="Discord">
+                <strong>sevas</strong>
+            </div>
+        </div>
+
+        <div class="copy">&copy; 2025 Seva Support. All rights reserved.</div>
+    </footer>
+
+    <script src="home.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,559 @@
+:root {
+    /* Palette de couleurs */
+    --bg-gradient-start: #272f38;
+    --bg-gradient-middle: #2e4660;
+    --neon-blue: #00e1ff;
+    --dark-blue: #007bff;
+    --dark-blue-hover: #0056b3;
+    --text-color: #ffffff;
+    --overlay-bg: rgba(0, 0, 0, 0.6);
+  
+    /* Typographie */
+    --font-base: 'Quicksand', 'Roboto', 'Arial', sans-serif;
+    --font-size-base: 16px;
+    --font-size-h1: 3rem;
+  
+    /* Ombres, rayons, etc. */
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+    /* Pour l'animation du background body */
+    --grad1: #272f38;
+    --grad2: #2e4660;
+    --grad3: #24252d;
+    --grad4: #191a21;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html,
+  body {
+    height: 100%;
+    scroll-behavior: smooth;
+  }
+  
+  /* ==============================
+     BODY : GRADIENT ANIMÉ
+  ============================== */
+  /* Animation d'un défilement de gradient en fond */
+  @keyframes shiftGradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--font-base);
+    font-size: var(--font-size-base);
+    color: var(--text-color);
+    overflow-x: hidden;
+  
+    /* Gradient animé en fond */
+    background: linear-gradient(
+      -45deg,
+      var(--grad1),
+      var(--grad2),
+      var(--grad3),
+      var(--grad4)
+    );
+    background-size: 400% 400%;
+    animation: shiftGradient 15s ease infinite;
+  }
+  
+  /* ==============================
+     HEADER & TITRE PRINCIPAL
+  ============================== */
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+  }
+  
+  @keyframes glowNeon {
+    0% {
+      text-shadow:
+        0 0 5px var(--neon-blue),
+        0 0 20px var(--dark-blue),
+        0 0 50px var(--dark-blue);
+    }
+    50% {
+      text-shadow:
+        0 0 10px var(--neon-blue),
+        0 0 30px var(--dark-blue),
+        0 0 80px var(--dark-blue);
+    }
+    100% {
+      text-shadow:
+        0 0 5px var(--neon-blue),
+        0 0 20px var(--dark-blue),
+        0 0 50px var(--dark-blue);
+    }
+  }
+  
+  h1 {
+    flex: 2;
+    font-size: var(--font-size-h1);
+    color: var(--neon-blue);
+    font-weight: bold;
+    margin-bottom: 3rem;
+    text-align: center;
+    animation: glowNeon 2.5s infinite ease-in-out;
+  }
+  
+  /* ==============================
+     SECTION "COOL" (CONTENU PRINCIPAL)
+  ============================== */
+  /* ==============================
+   SECTION "COOL" (CONTENU PRINCIPAL)
+============================== */
+.cool {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+    margin: 2rem auto;
+    /* Added vertical centering */
+    align-items: center; /* This centers vertically */
+    text-align: center;
+}
+
+.needCall {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center the text */
+    height: 100%;
+}
+
+.infos {
+    flex: 1.5;
+    text-align: center;
+    background: var(--overlay-bg);
+    padding: 1.5rem;
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+    margin: 3rem auto;
+    /* Apparition en douceur */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center the text */
+    height: 100%;
+}
+
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* ==============================
+     SECTION "FORFREEBANNER"
+  ============================== */
+  /* Ajout d'un scintillement léger */
+  @keyframes shimmer {
+    0% {
+      box-shadow: 0 0 10px rgba(255,255,255,0.2);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(255,255,255,0.6);
+    }
+    100% {
+      box-shadow: 0 0 10px rgba(255,255,255,0.2);
+    }
+  }
+  
+  .forFreeBanner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 3rem auto;
+    background: linear-gradient(150deg, #191a21 0%, #191a21 45%, #24252d 100%);
+    padding: 30px 20px 30px 20px;
+    width: 100%;
+  
+    /* Animation scintillante */
+    animation: shimmer 2s infinite ease-in-out;
+  }
+  
+  .forFreeBanner .text {
+    text-align: left;
+  }
+  
+  .forFreeBanner span {
+    color: var(--dark-blue);
+  }
+  
+  /* ==============================
+     PARAGRAPHES
+  ============================== */
+  p {
+    line-height: 1.6;
+    margin: 0.5rem 0;
+  }
+  
+  /* ==============================
+     BOUTONS & INTERACTIVITÉ
+  ============================== */
+  /* Effet de pulsation au survol */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.04);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    margin: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: var(--dark-blue);
+    color: var(--text-color);
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  button:hover {
+    background: var(--dark-blue-hover);
+    animation: pulse 0.8s infinite ease-in-out;
+  }
+  
+  /* ==============================
+     SECTION RÉSEAUX SOCIAUX
+  ============================== */
+  .social_networks {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  @keyframes scaleUp {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.07);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .social_networks div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+    padding: 5px 5px 5px 10px;
+    white-space: nowrap;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    min-width: 150px;
+    margin: 0.2rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .social_networks div:hover {
+    transform: scale(1.06);
+    animation: scaleUp 1s infinite ease-in-out;
+  }
+  
+  .social_networks img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+  }
+  
+  .social_networks p {
+    flex: 2;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .copy {
+    font-size: 0.8rem;
+  }
+  
+  /* ==============================
+     FOOTER
+  ============================== */
+  footer {
+    margin-top: auto;
+    width: 100%;
+    text-align: right;
+    padding: 1rem;
+  }
+  
+  /* ==============================
+     MENU BURGER ANIMÉ (3 lignes)
+  ============================== */
+  /* L’animation "floatBurger" fait flotter le burger continuellement */
+  @keyframes floatBurger {
+    0% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-2px) rotate(2deg);
+    }
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+  }
+  
+  .menuSidebar {
+    position: fixed;
+    left: 20px;
+    top: 25px;
+    z-index: 2;
+    width: 2rem;
+    height: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    animation: floatBurger 2s infinite ease-in-out; /* Flottement */
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  /* 3 lignes horizontales */
+  .menuSidebar .line {
+    width: 100%;
+    height: 4px;
+    background-color: var(--text-color);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  /* Survol du burger */
+  .menuSidebar:hover {
+    filter: brightness(1.2);
+    transform: scale(1.1);
+  }
+  
+  /* Transition vers "X" lors de l'ouverture (classe "open") */
+  .menuSidebar.open .line1 {
+    transform: translateY(10px) rotate(45deg);
+  }
+  
+  .menuSidebar.open .line2 {
+    opacity: 0;
+  }
+  
+  .menuSidebar.open .line3 {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+  
+  /* ==============================
+     SIDEBAR (MENU LATÉRAL)
+  ============================== */
+  /* Animation "shake" sur l'ouverture */
+  @keyframes sidebarShake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+  }
+  
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 100px 0;
+    text-align: end;
+    gap: 10px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1;
+  }
+  
+  .sidebar.open {
+    transform: translateX(0);
+    animation: sidebarShake 0.5s ease;
+  }
+  
+  .sidebar button {
+    width: 70%;
+    padding: 5px;
+    background: var(--dark-blue);
+    color: var(--text-color);
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+  
+  .sidebar button:hover {
+    background: var(--dark-blue-hover);
+  }
+  
+  /* ==============================
+     RESPONSIVE DESIGN
+  ============================== */
+  @media (max-width: 600px) {
+    .cool {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    header, footer {
+      padding: 0.5rem;
+    }
+  
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+    }
+  
+    .needCall {
+      font-size: 1.5rem;
+    }
+  }
+  
+.b2bServices {
+    max-width: 900px;
+    margin: 3rem auto;
+    background: var(--overlay-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    animation: fadeInUp 1s ease forwards;
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.b2bServices h2 {
+    font-size: 2rem;
+    color: var(--neon-blue);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.b2bServices p {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.servicesList ul {
+    list-style: none;
+    padding-left: 0;
+    line-height: 2;
+}
+
+.servicesList li {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    padding-left: 1.2rem;
+    position: relative;
+}
+
+.servicesList li::before {
+    content: "✔️";
+    position: absolute;
+    left: 0;
+    color: var(--dark-blue);
+    font-weight: bold;
+}
+
+/* FLAG LANGAGE */
+.language-dropdown {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 5;
+}
+
+.language-dropdown button {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#lang-options {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    gap: 5px;
+}
+
+#lang-options.hidden {
+    display: none;
+}
+
+
+
+#lang-options button {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+    transition: background 0.2s;
+}
+
+#lang-options button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+form {
+  display:inline-block;
+  gap: 10px;
+  flex-wrap: wrap;
+  text-align: center;
+}
