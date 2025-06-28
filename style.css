@@ -119,10 +119,7 @@
   /* ==============================
      SECTION "COOL" (CONTENU PRINCIPAL)
   ============================== */
-  /* ==============================
-   SECTION "COOL" (CONTENU PRINCIPAL)
-============================== */
-.cool {
+.intro {
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
@@ -347,7 +344,7 @@
      RESPONSIVE DESIGN
   ============================== */
   @media (max-width: 600px) {
-    .cool {
+    .intro {
       flex-direction: column;
       align-items: center;
     }
@@ -392,22 +389,22 @@
 }
 
 .servicesList ul {
+  text-align: center;
     list-style: none;
     padding-left: 0;
     line-height: 2;
 }
 
 .servicesList li {
-    margin: 0.5rem 0;
-    font-size: 1rem;
-    padding-left: 1.2rem;
-    position: relative;
+  text-align: center;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  padding-left: 1.2rem;
+  position: relative;
 }
 
 .servicesList li::before {
     content: "✔️";
-    position: absolute;
-    left: 0;
     color: var(--dark-blue);
     font-weight: bold;
 }
